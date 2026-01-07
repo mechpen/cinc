@@ -4,6 +4,9 @@ Run containerd in a container
 An example run:
 
 ```
+# create mount point for nested overlay fs
+sudo mkdir /cinc
+# start
 docker run -d -v /cinc:/var/lib/containerd --privileged --name cinc mechpen/cinc
 # pull an image
 docker exec cinc ctr i pull quay.io/quay/busybox:latest
